@@ -12,6 +12,15 @@ note_id = add_note(conn, "alice", "Groceries", "eggs, milk")
 print(get_note(conn, note_id))
 ```
 
+List a user's notes, newest first, 20 per page:
+
+```python
+from notes import list_notes
+
+for note in list_notes(conn, "alice", page=1):
+    print(note["title"])
+```
+
 Run the tests:
 
 ```sh
